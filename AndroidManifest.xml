@@ -14,13 +14,25 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.phoenices.chapters.MainActivity"
+            android:name="com.phoenices.chapters.WelcomeActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.phoenices.chapters.GameplayActivity"
+            android:label="@string/title_activity_gameplay" >
+        </activity>
+        <activity
+            android:name="com.phoenices.chapters.SelectActivity"
+            android:label="@string/title_activity_select" >
+        </activity>
+        <activity
+            android:name="com.phoenices.chapters.ContinueActivity"
+            android:label="@string/title_activity_continue" >
         </activity>
     </application>
 

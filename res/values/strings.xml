@@ -4,5 +4,8 @@
     <string name="app_name">Chapters</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_gameplay">GameplayActivity</string>
+    <string name="title_activity_select">SelectActivity</string>
+    <string name="title_activity_continue">ContinueActivity</string>
 
 </resources>
