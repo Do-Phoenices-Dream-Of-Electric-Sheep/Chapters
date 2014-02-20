@@ -1,10 +1,8 @@
 # Chapters Demo Story #
 
-## What ##
-* 
+## Premise ##
+* Wake up trapped in a locked room (i.e. the demo room); **escape**
 
-## Where ##
-* The CS234 classroom
 
 ## Who ##
 * 
