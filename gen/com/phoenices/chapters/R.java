@@ -29,9 +29,9 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_gameplay=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int activity_resume=0x7f030002;
-        public static final int activity_select=0x7f030003;
+        public static final int activity_resume=0x7f030001;
+        public static final int activity_select=0x7f030002;
+        public static final int activity_welcome=0x7f030003;
     }
     public static final class menu {
         public static final int gameplay=0x7f070000;
