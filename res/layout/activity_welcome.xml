@@ -17,17 +17,19 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_newgame" />
-    
+        android:id="@+id/btn_newgame"
+        android:text="@string/btn_newgame" />
     
     <Button 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_resume"/>
+        android:id="@+id/btn_resume"
+        android:text="@string/btn_resume"/>
     
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_settings" />
+        android:id="@+id/btn_settings"
+        android:text="@string/btn_settings" />
 
 </LinearLayout>
