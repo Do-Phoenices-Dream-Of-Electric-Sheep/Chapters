@@ -31,7 +31,7 @@
             android:label="@string/title_activity_select" >
         </activity>
         <activity
-            android:name="com.phoenices.chapters.ContinueActivity"
+            android:name="com.phoenices.chapters.ResumeActivity"
             android:label="@string/title_activity_continue" >
         </activity>
     </application>
