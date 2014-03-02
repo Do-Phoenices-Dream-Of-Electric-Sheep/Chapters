@@ -9,27 +9,25 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".WelcomeActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name" />
-    
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_newgame"
-        android:text="@string/btn_newgame" />
-    
-    <Button 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/btn_resume"
-        android:text="@string/btn_resume"/>
-    
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="2"
+        android:text="@string/btn_resume" />
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_newgame"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="3"
+        android:text="@string/btn_newgame" />
+
+    <Button
         android:id="@+id/btn_settings"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
         android:text="@string/btn_settings" />
 
 </LinearLayout>

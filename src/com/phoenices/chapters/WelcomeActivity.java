@@ -14,7 +14,7 @@ public class WelcomeActivity extends Activity {
     private Button bResume;
     private Button bSettings;
 
-    private View.OnClickListener ListenerNewGame = new View.OnClickListener() {
+    private View.OnClickListener listenerNewGame = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent intentSelect = new Intent(WelcomeActivity.this,
@@ -25,7 +25,7 @@ public class WelcomeActivity extends Activity {
         }
     };
 
-    private View.OnClickListener ListenerResume = new View.OnClickListener() {
+    private View.OnClickListener listenerResume = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent intentResume= new Intent(WelcomeActivity.this,
@@ -36,7 +36,7 @@ public class WelcomeActivity extends Activity {
         }
     };
 
-    private View.OnClickListener ListenerSettings = new View.OnClickListener() {
+    private View.OnClickListener listenerSettings = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent intentSettings = new Intent(WelcomeActivity.this,
@@ -57,9 +57,9 @@ public class WelcomeActivity extends Activity {
         bResume = (Button) findViewById(R.id.btn_resume);
         bSettings = (Button) findViewById(R.id.btn_settings);
 
-        bNewGame.setOnClickListener(ListenerNewGame);
-        bResume.setOnClickListener(ListenerResume);
-        bSettings.setOnClickListener(ListenerSettings);
+        bNewGame.setOnClickListener(listenerNewGame);
+        bResume.setOnClickListener(listenerResume);
+        bSettings.setOnClickListener(listenerSettings);
     }
 
     @Override
