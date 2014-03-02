@@ -34,6 +34,10 @@
             android:name="com.phoenices.chapters.ResumeActivity"
             android:label="@string/title_activity_continue" >
         </activity>
+        <activity
+            android:name="com.phoenices.chapters.SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
     </application>
 
 </manifest>

@@ -36,6 +36,9 @@ public class WelcomeActivity extends Activity {
 	private View.OnClickListener ListenerSettings = new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
+			Intent intentState = new Intent(WelcomeActivity.this, SettingsActivity.class);
+			
+			startActivity(intentState);
 			return;			
 		}
 	};
