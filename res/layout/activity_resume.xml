@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_resume_header" />
+        android:text="@string/header_activity_resume" />
     
 
 </LinearLayout>
