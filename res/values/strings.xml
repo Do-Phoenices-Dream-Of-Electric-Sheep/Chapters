@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="metaioSDKSignature">d5xmFGetf6ADuxnMjHhi/QVqya6jwKAPPU+JViJbdqA=</string>
     <string name="app_name">Chapters</string>
     <string name="btn_newgame">New Storyline</string>
     <string name="btn_resume">Resume</string>
