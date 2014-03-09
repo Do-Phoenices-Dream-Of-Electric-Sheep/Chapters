@@ -107,7 +107,7 @@ public final class R {
     public static final class id {
         public static final int actionButton=0x7f06000d;
         public static final int action_settings=0x7f060023;
-        public static final int activity_continue=0x7f060008;
+        public static final int activity_continue=0x7f060009;
         public static final int audioButton=0x7f060002;
         public static final int btn_newgame=0x7f06000b;
         public static final int btn_resume=0x7f06000a;
@@ -137,7 +137,7 @@ public final class R {
         public static final int textPOILocation=0x7f060015;
         public static final int textPOIName=0x7f060013;
         public static final int textToast=0x7f060019;
-        public static final int textView1=0x7f060009;
+        public static final int textView1=0x7f060008;
         public static final int videoButton=0x7f060003;
         public static final int webBottomBar=0x7f06001d;
         public static final int webView=0x7f06001a;
