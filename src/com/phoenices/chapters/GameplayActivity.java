@@ -39,7 +39,6 @@ public class GameplayActivity extends ARViewActivity {
 	    protected void loadContents() 
 	    {  
 	        try {
-	            
 	            AssetsManager.extractAllAssets(this, true);
 	            
 	            // Getting a file path for tracking configuration XML file
@@ -50,7 +49,7 @@ public class GameplayActivity extends ARViewActivity {
 	            MetaioDebug.log("Tracking data loaded: " + result); 
 	            
 	            // Getting a file path for a 3D geometry
-	            String metaioManModel = AssetsManager.getAssetPath(getApplicationContext(), "metaioman.md2");         
+	            final String metaioManModel = AssetsManager.getAssetPath(getApplicationContext(), "metaioman.md2");         
 	            if (metaioManModel != null) {
 	                // Loading 3D geometry
 	                mModel = metaioSDK.createGeometry(metaioManModel);
@@ -64,8 +63,7 @@ public class GameplayActivity extends ARViewActivity {
 	            
 	            
 	         // Getting a file path for a movie
-	            final String pcampus = AssetsManager.getAssetPath(getApplicationContext(), "Chapters/assets/campus.3g2");       
-	            //storytext.setVisibility(TextView.GONE);
+	            final String pcampus = AssetsManager.getAssetPath(getApplicationContext(), "campus.3g2");
 	            if (pcampus != null) 
 	            {
 	                // Loading movie
@@ -83,6 +81,17 @@ public class GameplayActivity extends ARViewActivity {
 	                }
 	                else
 	                    MetaioDebug.log(Log.ERROR, "Error loading geometry: "+mcampus);
+	            }
+	            
+	            final String pFireAlarmSound = AssetsManager.getAssetPath(getApplicationContext(), 
+	                    "Fire-Alarm-SoundBible.com-78848779.mp3");
+	            if (pFireAlarmSound != null) {
+	                // TODO
+	                if (mfirealarm != null) {
+	                    // TODO
+	                } else {
+	                    // TODO
+	                }
 	            }
 	            
 	        } catch (Exception e) {
