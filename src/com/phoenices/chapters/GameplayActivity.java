@@ -1,9 +1,6 @@
 package com.phoenices.chapters;
 
-import android.os.Bundle;
-import android.app.Activity;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
@@ -11,8 +8,6 @@ import com.metaio.sdk.ARViewActivity;
 import com.metaio.sdk.MetaioDebug;
 import com.metaio.sdk.jni.IGeometry;
 import com.metaio.sdk.jni.IMetaioSDKCallback;
-import com.metaio.sdk.jni.Rotation;
-import com.metaio.sdk.jni.TrackingValuesVector;
 import com.metaio.sdk.jni.Vector3d;
 import com.metaio.tools.io.AssetsManager;
 
@@ -26,8 +21,10 @@ public class GameplayActivity extends ARViewActivity {
 	private IGeometry mguy;
 	private IGeometry mhinkley;
 	private IGeometry mobservatory;
+	private IGeometry mModel;
 	private TextView storytext;	
-	protected int getGUILayout() {
+	@Override
+    protected int getGUILayout() {
 		return R.layout.activity_gameplay;
 		
 	}
@@ -37,54 +34,72 @@ public class GameplayActivity extends ARViewActivity {
 		finish();
 	}
 
+	
+	   @Override
+	    protected void loadContents() 
+	    {
+//	          //getCoordinateSystemID
+//	          //http://helpdesk.metaio.com/questions/15089/how-to-find-out-which-coordinate-system-is-currently-tracked
+//	          TrackingValuesVector poses = metaioSDK.getTrackingValues();
+//	          if (poses.size() != 0) {
+//	              mcampus.setCoordinateSystemID(poses.get(1).getCoordinateSystemID());
+	//
+//	          }
+//	          
+//	          
+//	          // Getting a file path for a movie
+//	          final String pcampus = AssetsManager.getAssetPath(getApplicationContext(), "campus.3g2");       
+//	          //storytext.setVisibility(TextView.GONE);
+//	          if (pcampus != null) 
+//	          {
+//	              // Loading movie
+//	              mcampus = metaioSDK.createGeometryFromMovie(pcampus, true);
+//	              if (mcampus != null) 
+//	              {
+//	                  // Set geometry properties
+//	                  mcampus.setScale(5.0f);
+//	                  //start movie
+//	                  mcampus.startMovieTexture(true);
+//	                  //storytext.setVisibility(TextView.VISIBILE);
+//	                  storytext = (TextView) this.findViewById(R.id.textView1);
+//	                  storytext.setText("testing testing");
+//	                  
+//	              }
+//	              else
+//	                  MetaioDebug.log(Log.ERROR, "Error loading geometry: "+mcampus);
+//	          }
 
-	protected void loadContents() 
-	{
-		try
-		{
-			//getCoordinateSystemID
-			//http://helpdesk.metaio.com/questions/15089/how-to-find-out-which-coordinate-system-is-currently-tracked
-			TrackingValuesVector poses = metaioSDK.getTrackingValues();
-			if (poses.size() != 0) {
-	            mcampus.setCoordinateSystemID(poses.get(1).getCoordinateSystemID());
-
-			}
-			
-			
-			// Getting a file path for tracking configuration XML file
-			String trackingConfigFile = AssetsManager.getAssetPath(getApplicationContext(), "Chapters/assets/TrackingData_MarkerlessFast.xml");
-			
-			// Assigning tracking configuration
-			boolean result = metaioSDK.setTrackingConfiguration(trackingConfigFile); 
-			MetaioDebug.log("Tracking data loaded: " + result); 
-	        
-			// Getting a file path for a movie
-			final String pcampus = AssetsManager.getAssetPath(getApplicationContext(), "Chapters/assets/campus.3g2");		
-			//storytext.setVisibility(TextView.GONE);
-			if (pcampus != null) 
-			{
-				// Loading movie
-				mcampus = metaioSDK.createGeometryFromMovie(pcampus, true);
-				if (mcampus != null) 
-				{
-					// Set geometry properties
-					mcampus.setScale(5.0f);
-					//start movie
-					mcampus.startMovieTexture(true);
-					//storytext.setVisibility(TextView.VISIBILE);
-					storytext = (TextView) this.findViewById(R.id.textView1);
-					storytext.setText("testing testing");
-					
-				}
-				else
-					MetaioDebug.log(Log.ERROR, "Error loading geometry: "+mcampus);
-			}
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-	}
+	       
+	        try {
+	            
+	            AssetsManager.extractAllAssets(this, true);
+	            
+	            // Getting a file path for tracking configuration XML file
+	            String trackingConfigFile = AssetsManager.getAssetPath(getApplicationContext(), "TrackingData_MarkerlessFast.xml");
+	            
+	            // Assigning tracking configuration
+	            boolean result = metaioSDK.setTrackingConfiguration(trackingConfigFile); 
+	            MetaioDebug.log("Tracking data loaded: " + result); 
+	            
+	            // Getting a file path for a 3D geometry
+	            String metaioManModel = AssetsManager.getAssetPath(getApplicationContext(), "metaioman.md2");         
+	            if (metaioManModel != null) {
+	                // Loading 3D geometry
+	                mModel = metaioSDK.createGeometry(metaioManModel);
+	                if (mModel != null) {
+	                    // Set geometry properties
+	                    mModel.setScale(new Vector3d(4.0f, 4.0f, 4.0f));
+	                } else {
+	                      MetaioDebug.log(Log.ERROR, "Error loading geometry: "+metaioManModel);   
+	                }
+	            }
+	            
+	            String campusModel = AssetsManager.getAssetPath(getApplicationContext(), "campus.3g2");
+	            
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    }
 	
 	@Override
 	protected void onGeometryTouched(IGeometry geometry)

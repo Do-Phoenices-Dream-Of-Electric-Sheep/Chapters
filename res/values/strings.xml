@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="metaioSDKSignature">d5xmFGetf6ADuxnMjHhi/QVqya6jwKAPPU+JViJbdqA=</string>
     <string name="app_name">Chapters</string>
     <string name="btn_newgame">New Storyline</string>
@@ -13,5 +14,8 @@
     <string name="title_activity_continue">ContinueActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="header_activity_settings">Settings</string>
-	<string name="desc">x button</string>
+    <string name="desc">x button</string>
+    <string name="title_activity_tutorial_hello_world">TutorialHelloWorld</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

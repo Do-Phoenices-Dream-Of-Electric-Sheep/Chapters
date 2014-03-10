@@ -13,6 +13,7 @@
 
 <TrackingData>
 	<Sensors>
+	    
 		<!--	Use the "Fast" variant of the "FeatureBasedSensorSource". The
 				characteristics of this tracker are explained above. -->
 		<Sensor Type="FeatureBasedSensorSource" Subtype="Fast">
@@ -20,124 +21,30 @@
 			<!--	Assign an ID to this sensor -->
 			<SensorID>FeatureTracking1</SensorID>
 
-			<!--	Parameters that apply to the sensor -->
 			<Parameters>
-			
-				<!--	The following feature descriptor types are available: 
-						"regular", "upright", "gravity", "rectified". 
-						- The "regular" feature descriptor type is the most 
-						  general feature descriptor type and is used as 
-						  default if the tag is not specified. 
-						- The "upright" feature descriptor type assumes that 
-						  the camera is not rotated with respect to the optical 
-						  axis, i.e. is turned upside down, during the tracking 
-						  process. 
-						- The "gravity" feature descriptor type can only be 
-						  used with devices with inertial sensors which 
-						  measures gravity. It is used for localizing static 
-						  objects that provide (close to) vertical surfaces, 
-						  e.g. buildings or posters on a wall. The orientation 
-						  of the features will then be aligned with gravity. 
-						- The "rectified" feature descriptor type can only be 
-						  used with devices with inertial sensors which 
-						  measures gravity. It is used for planar objects on a 
-						  horizontal surface, e.g. a magazine on a table.
-						  This will improve the result of the localization of 
-						  planar objects under steep camera angles at the cost 
-						  of a lower framerate during localization.
-						This parameter is for expert usage only. In general it 
-						is advised to leave the value unchanged. -->
 				<FeatureDescriptorAlignment>regular</FeatureDescriptorAlignment>
-				
-				<!--	A restriction on the number of reference planar objects 
-						to be localized per frame. Localization takes longer 
-						than interframe tracking, and if the system tries to 
-						localize too many objects at the same time, it might 
-						cause a lower framerate. The default value for this is 5 
-						and is used if the tag is not specified.
-						Another name that can be used for this parameter is 
-						<MultipleReferenceImagesFast>. This name is however 
-						deprecated and should not be used any more. 
-						This parameter is for expert usage only. In general it 
-						is advised to leave the value unchanged. -->
 				<MaxObjectsToDetectPerFrame>5</MaxObjectsToDetectPerFrame>
-				
-				<!--	The maximum number of objects that should be tracked in 
-						parallel. Tracking many objects in parallel is quite 
-						expensive and might lead to a lower framerate. As soon 
-						as the maximum number of tracked objects is reached, 
-						the system will no longer try to localize new objects. 
-						The default value for this is 1 and is used if the tag 
-						is not specified. 
-						Another name that can be used for this parameter is 
-						<MaxNumCosesForInit>. This name is however deprecated 
-						and should not be used any more. 
-						This parameter is for expert usage only. In general it 
-						is advised to leave the value unchanged. -->
 				<MaxObjectsToTrackInParallel>1</MaxObjectsToTrackInParallel>
-
-				<!--	Default similarity threshold for specifying whether
-						template tracking was successful or failed. The 
-						tracking quality measure is defined between -1 and 1, 
-						where 1 is the best	possible value. If the tracking 
-						quality	is reported to be below the threshold, the 
-						tracker will treat the corresponding frame as lost. 
-						The default value for this is 0.7 and is used if the 
-						tag is not specified. This setting can be overridden 
-						for each "COS" if it is defined there. 
-						This parameter is for expert usage only. In general it 
-						is advised to leave the value unchanged. -->
-				<SimilarityThreshold>0.7</SimilarityThreshold>
-					
+				<SimilarityThreshold>0.7</SimilarityThreshold>			
 			</Parameters>
 
-			<!--	Define a "SensorCOS" for this sensor. This is essentially a 
-					coordinate system associated with a template image that is 
-					to be tracked. -->
-			<SensorCOS>
-			
-				<!--	An ID that this COS is associated with. -->
-				<SensorCosID>Patch1</SensorCosID>
-				
-				<!--	Parameters that should be applied to this "SensorCOS". 
-						-->
-				<Parameters>
 
-					<!--	Reference image file name. If available, width and 
-							height of the tracking template in millimeters can
-							be specified by adding attributes "WidthMM" and/or 
-							"HeightMM". If these values are not specified at 
-							all, the width and height of the reference image in 
-							pixels will be used. If only width or heigth are 
-							specified, the missing quantity will be calculated 
-							such that sizes agree with the aspect ratio of the 
-							image. 
-							These parameters are not required and are intended 
-							for expert use only. -->
+            <SensorCOS>
+                <SensorCosID>Campus</SensorCosID>
+				<Parameters>
 					<ReferenceImage>campus.jpg</ReferenceImage>
-					<!-- <ReferenceImage WidthMM="283" HeightMM="200">campus.jpg</ReferenceImage> -->
-
-					<!--	Another similarity threshold can be specified here. 
-							It will override the default similarity threshold 
-							specified for the sensor. 
-							This parameter is for expert usage only. In general 
-							it is advised to leave the value unchanged. -->
 					<SimilarityThreshold>0.7</SimilarityThreshold>
-
 				</Parameters>
 			</SensorCOS>
-
-			<!--	The commented lines below show how another COS can be 
-					added to the configuration. -->
-			<!--
+			
 			<SensorCOS>
-				<SensorCosID>Patch2</SensorCosID>
-				<Parameters>
-					<ReferenceImage>junaioman.png</ReferenceImage>
-					<SimilarityThreshold>0.8</SimilarityThreshold>
-				</Parameters>
-			</SensorCOS>
-			-->
+                <SensorCosID>MarkerMan</SensorCosID>               
+                <Parameters>
+                    <ReferenceImage>metaioman_target.png</ReferenceImage>
+                    <!-- <ReferenceImage WidthMM="100" HeightMM="100">metaioman.png</ReferenceImage> -->
+                    <SimilarityThreshold>0.7</SimilarityThreshold>
+                </Parameters>
+            </SensorCOS>
 
 		</Sensor>
 	</Sensors>
@@ -155,8 +62,6 @@
 			-->
 	<Connections>
 		<COS>
-
-			<!--	A descriptive name for this COS. -->
 			<Name>MarkerlessCOS1</Name>
 
 			<!--	Which type of Fuser to use. Here, we use the 
@@ -238,7 +143,7 @@
 						that these IDs are the same that we have used in the 
 						Sensor definition above. -->
 				<SensorID>FeatureTracking1</SensorID>
-				<SensorCosID>Patch1</SensorCosID>
+				<SensorCosID>MarkerMan</SensorCosID>
 
 				<!--	A hand-eye calibration allows to specify the relative 
 						pose between two sensors. In the simple case of having 
@@ -284,7 +189,41 @@
 					</RotationOffset>
 				</COSOffset>
 			</SensorSource>
-		</COS>
+			
+			
+			<SensorSource>
+                <SensorID>FeatureTracking1</SensorID>
+                <SensorCosID>Campus</SensorCosID>
+
+                <HandEyeCalibration>
+                    <TranslationOffset>
+                        <X>0</X>
+                        <Y>0</Y>
+                        <Z>0</Z>
+                    </TranslationOffset>
+                    
+                    <RotationOffset>
+                        <X>0</X>
+                        <Y>0</Y>
+                        <Z>0</Z>
+                        <W>1</W>
+                    </RotationOffset>
+                </HandEyeCalibration>
+
+                <COSOffset>
+                    <TranslationOffset>
+                        <X>0</X>
+                        <Y>0</Y>
+                        <Z>0</Z>
+                    </TranslationOffset>
+                    <RotationOffset>
+                        <X>0</X>
+                        <Y>0</Y>
+                        <Z>0</Z>
+                        <W>1</W>
+                    </RotationOffset>
+                </COSOffset>
+            </SensorSource>
 
 		<!--	The commented lines below show how another COS can be added to 
 				the configuration. This can be used together with the 

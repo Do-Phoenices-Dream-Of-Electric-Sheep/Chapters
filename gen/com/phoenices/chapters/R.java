@@ -29,6 +29,11 @@ public final class R {
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
+
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
@@ -977,11 +982,13 @@ public final class R {
         public static final int header_activity_resume=0x7f070110;
         public static final int header_activity_select=0x7f070112;
         public static final int header_activity_settings=0x7f070117;
+        public static final int hello_world=0x7f07011a;
         public static final int metaioSDKSignature=0x7f070000;
         public static final int title_activity_continue=0x7f070115;
         public static final int title_activity_gameplay=0x7f070113;
         public static final int title_activity_select=0x7f070114;
         public static final int title_activity_settings=0x7f070116;
+        public static final int title_activity_tutorial_hello_world=0x7f070119;
     }
     public static final class style {
         /** 
