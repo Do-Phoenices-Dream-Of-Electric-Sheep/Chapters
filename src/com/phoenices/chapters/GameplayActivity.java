@@ -12,7 +12,7 @@ import com.metaio.sdk.jni.Vector3d;
 import com.metaio.tools.io.AssetsManager;
 
 public class GameplayActivity extends ARViewActivity {
-	
+
 	private IGeometry mcampus;
 	private IGeometry mefforts;
 	private IGeometry mfirealarm;
@@ -26,9 +26,9 @@ public class GameplayActivity extends ARViewActivity {
 	@Override
     protected int getGUILayout() {
 		return R.layout.activity_gameplay;
-		
+
 	}
-	
+
 	public void onButtonClick(View v)
 	{
 		finish();
@@ -37,39 +37,7 @@ public class GameplayActivity extends ARViewActivity {
 	
 	   @Override
 	    protected void loadContents() 
-	    {
-//	          //getCoordinateSystemID
-//	          //http://helpdesk.metaio.com/questions/15089/how-to-find-out-which-coordinate-system-is-currently-tracked
-//	          TrackingValuesVector poses = metaioSDK.getTrackingValues();
-//	          if (poses.size() != 0) {
-//	              mcampus.setCoordinateSystemID(poses.get(1).getCoordinateSystemID());
-	//
-//	          }
-//	          
-//	          
-//	          // Getting a file path for a movie
-//	          final String pcampus = AssetsManager.getAssetPath(getApplicationContext(), "campus.3g2");       
-//	          //storytext.setVisibility(TextView.GONE);
-//	          if (pcampus != null) 
-//	          {
-//	              // Loading movie
-//	              mcampus = metaioSDK.createGeometryFromMovie(pcampus, true);
-//	              if (mcampus != null) 
-//	              {
-//	                  // Set geometry properties
-//	                  mcampus.setScale(5.0f);
-//	                  //start movie
-//	                  mcampus.startMovieTexture(true);
-//	                  //storytext.setVisibility(TextView.VISIBILE);
-//	                  storytext = (TextView) this.findViewById(R.id.textView1);
-//	                  storytext.setText("testing testing");
-//	                  
-//	              }
-//	              else
-//	                  MetaioDebug.log(Log.ERROR, "Error loading geometry: "+mcampus);
-//	          }
-
-	       
+	    {  
 	        try {
 	            
 	            AssetsManager.extractAllAssets(this, true);
@@ -94,7 +62,28 @@ public class GameplayActivity extends ARViewActivity {
 	                }
 	            }
 	            
-	            String campusModel = AssetsManager.getAssetPath(getApplicationContext(), "campus.3g2");
+	            
+	         // Getting a file path for a movie
+	            final String pcampus = AssetsManager.getAssetPath(getApplicationContext(), "Chapters/assets/campus.3g2");       
+	            //storytext.setVisibility(TextView.GONE);
+	            if (pcampus != null) 
+	            {
+	                // Loading movie
+	                mcampus = metaioSDK.createGeometryFromMovie(pcampus, true);
+	                if (mcampus != null) 
+	                {
+	                    // Set geometry properties
+	                    mcampus.setScale(5.0f);
+	                    //start movie
+	                    mcampus.startMovieTexture(true);
+	                    //storytext.setVisibility(TextView.VISIBILE);
+	                    storytext = (TextView) this.findViewById(R.id.textView1);
+	                    storytext.setText("testing testing");
+
+	                }
+	                else
+	                    MetaioDebug.log(Log.ERROR, "Error loading geometry: "+mcampus);
+	            }
 	            
 	        } catch (Exception e) {
 	            e.printStackTrace();
@@ -114,13 +103,12 @@ public class GameplayActivity extends ARViewActivity {
 		// No callbacks needed in this tutorial
 		return null;
 	}	
-	
-	
-	
+
+
+
 }
-	
-	
-	
+
+
 
 
 

@@ -28,7 +28,9 @@
 				<SimilarityThreshold>0.7</SimilarityThreshold>			
 			</Parameters>
 
-
+			<!--	Define a "SensorCOS" for this sensor. This is essentially a 
+					coordinate system associated with a template image that is 
+					to be tracked. -->
             <SensorCOS>
                 <SensorCosID>Campus</SensorCosID>
 				<Parameters>
@@ -36,16 +38,48 @@
 					<SimilarityThreshold>0.7</SimilarityThreshold>
 				</Parameters>
 			</SensorCOS>
-			
+
 			<SensorCOS>
                 <SensorCosID>MarkerMan</SensorCosID>               
                 <Parameters>
                     <ReferenceImage>metaioman_target.png</ReferenceImage>
-                    <!-- <ReferenceImage WidthMM="100" HeightMM="100">metaioman.png</ReferenceImage> -->
                     <SimilarityThreshold>0.7</SimilarityThreshold>
                 </Parameters>
             </SensorCOS>
 
+
+			<SensorCOS>
+				<SensorCosID>efforts</SensorCosID>
+				<Parameters>
+					<ReferenceImage>efforts.jpg</ReferenceImage>
+					<SimilarityThreshold>0.7</SimilarityThreshold>
+				</Parameters>
+			</SensorCOS>
+			
+		    <SensorCOS>
+				<SensorCosID>observatory</SensorCosID>
+				<Parameters>
+					<ReferenceImage>observatory.jpg</ReferenceImage>
+					<SimilarityThreshold>0.7</SimilarityThreshold>
+				</Parameters>
+			</SensorCOS>
+			
+				<SensorCOS>
+				<SensorCosID>firealarm</SensorCosID>
+				<Parameters>
+					<ReferenceImage>firealarm.jpg</ReferenceImage>
+					<SimilarityThreshold>0.7</SimilarityThreshold>
+				</Parameters>
+			</SensorCOS>
+		    
+		    <SensorCOS>
+				<SensorCosID>foosball</SensorCosID>
+				<Parameters>
+					<ReferenceImage>foosball.jpg</ReferenceImage>
+					<SimilarityThreshold>0.7</SimilarityThreshold>
+				</Parameters>
+			</SensorCOS>
+			
 		</Sensor>
 	</Sensors>
 
@@ -145,6 +179,7 @@
 				<SensorID>FeatureTracking1</SensorID>
 				<SensorCosID>MarkerMan</SensorCosID>
 
+
 				<!--	A hand-eye calibration allows to specify the relative 
 						pose between two sensors. In the simple case of having 
 						one camera-based sensor, it is usually not used. It 
@@ -232,53 +267,281 @@
 				track multiple objects in parallel, it will always only track 
 				one of the defined objects at the same time. 
 				-->
-		<!--
-		<COS>
-			<Name>MarkerlessCOS2</Name>
-			<Fuser Type="BestQualityFuser">
-				<Parameters>
-					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames>
-					<GravityAssistance></GravityAssistance>
-					<AlphaTranslation>0.8</AlphaTranslation>
-					<GammaTranslation>0.8</GammaTranslation>
-					<AlphaRotation>0.5</AlphaRotation>
-					<GammaRotation>0.5</GammaRotation>
-					<ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor>
-				</Parameters>
-			</Fuser>
+	
+<!-- 		<COS> -->
+<!-- 			<Name>MarkerlessCOS2</Name> -->
+<!-- 			<Fuser Type="BestQualityFuser"> -->
+<!-- 				<Parameters> -->
+<!-- 					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames> -->
+<!-- 					<GravityAssistance></GravityAssistance> -->
+<!-- 					<AlphaTranslation>0.8</AlphaTranslation> -->
+<!-- 					<GammaTranslation>0.8</GammaTranslation> -->
+<!-- 					<AlphaRotation>0.5</AlphaRotation> -->
+<!-- 					<GammaRotation>0.5</GammaRotation> -->
+<!-- 					<ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor> -->
+<!-- 				</Parameters> -->
+<!-- 			</Fuser> -->
 
-			<SensorSource>
-				<SensorID>FeatureTracking1</SensorID>
-				<SensorCosID>Patch2</SensorCosID>
-				<HandEyeCalibration>
-					<TranslationOffset>
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</TranslationOffset>
-					<RotationOffset>
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-						<W>1</W>
-					</RotationOffset>
-				</HandEyeCalibration>
-				<COSOffset>
-					<TranslationOffset>
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</TranslationOffset>
-					<RotationOffset>
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-						<W>1</W>
-					</RotationOffset>
-				</COSOffset>
-			</SensorSource>
-		</COS>
-		-->
+<!-- 			<SensorSource> -->
+<!-- 				<SensorID>FeatureTracking1</SensorID> -->
+<!-- 				<SensorCosID>fundamentals</SensorCosID> -->
+<!-- 				<HandEyeCalibration> -->
+<!-- 					<TranslationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 					</TranslationOffset> -->
+<!-- 					<RotationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 						<W>1</W> -->
+<!-- 					</RotationOffset> -->
+<!-- 				</HandEyeCalibration> -->
+<!-- 				<COSOffset> -->
+<!-- 					<TranslationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 					</TranslationOffset> -->
+<!-- 					<RotationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 						<W>1</W> -->
+<!-- 					</RotationOffset> -->
+<!-- 				</COSOffset> -->
+<!-- 			</SensorSource> -->
+<!-- 		</COS> -->
+		
+<!-- 		<COS> -->
+<!-- 			<Name>MarkerlessCOS3</Name> -->
+<!-- 			<Fuser Type="BestQualityFuser"> -->
+<!-- 				<Parameters> -->
+<!-- 					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames> -->
+<!-- 					<GravityAssistance></GravityAssistance> -->
+<!-- 					<AlphaTranslation>0.8</AlphaTranslation> -->
+<!-- 					<GammaTranslation>0.8</GammaTranslation> -->
+<!-- 					<AlphaRotation>0.5</AlphaRotation> -->
+<!-- 					<GammaRotation>0.5</GammaRotation> -->
+<!-- 					<ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor> -->
+<!-- 				</Parameters> -->
+<!-- 			</Fuser> -->
 
+<!-- 			<SensorSource> -->
+<!-- 				<SensorID>FeatureTracking1</SensorID> -->
+<!-- 				<SensorCosID>guy</SensorCosID> -->
+<!-- 				<HandEyeCalibration> -->
+<!-- 					<TranslationOffset> -->
+<!-- 						<X>2</X> -->
+<!-- 						<Y>2</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 					</TranslationOffset> -->
+<!-- 					<RotationOffset> -->
+<!-- 						<X>2</X> -->
+<!-- 						<Y>2</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 						<W>1</W> -->
+<!-- 					</RotationOffset> -->
+<!-- 				</HandEyeCalibration> -->
+<!-- 				<COSOffset> -->
+<!-- 					<TranslationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 					</TranslationOffset> -->
+<!-- 					<RotationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 						<W>1</W> -->
+<!-- 					</RotationOffset> -->
+<!-- 				</COSOffset> -->
+<!-- 			</SensorSource> -->
+<!-- 		</COS> -->
+
+<!-- 		<COS> -->
+<!-- 			<Name>MarkerlessCOS4</Name> -->
+<!-- 			<Fuser Type="BestQualityFuser"> -->
+<!-- 				<Parameters> -->
+<!-- 					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames> -->
+<!-- 					<GravityAssistance></GravityAssistance> -->
+<!-- 					<AlphaTranslation>0.8</AlphaTranslation> -->
+<!-- 					<GammaTranslation>0.8</GammaTranslation> -->
+<!-- 					<AlphaRotation>0.5</AlphaRotation> -->
+<!-- 					<GammaRotation>0.5</GammaRotation> -->
+<!-- 					<ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor> -->
+<!-- 				</Parameters> -->
+<!-- 			</Fuser> -->
+
+<!-- 			<SensorSource> -->
+<!-- 				<SensorID>FeatureTracking1</SensorID> -->
+<!-- 				<SensorCosID>efforts</SensorCosID> -->
+<!-- 				<HandEyeCalibration> -->
+<!-- 					<TranslationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 					</TranslationOffset> -->
+<!-- 					<RotationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 						<W>1</W> -->
+<!-- 					</RotationOffset> -->
+<!-- 				</HandEyeCalibration> -->
+<!-- 				<COSOffset> -->
+<!-- 					<TranslationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 					</TranslationOffset> -->
+<!-- 					<RotationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 						<W>1</W> -->
+<!-- 					</RotationOffset> -->
+<!-- 				</COSOffset> -->
+<!-- 			</SensorSource> -->
+<!-- 		</COS> -->
+		
+<!-- 		<COS> -->
+<!-- 			<Name>MarkerlessCOS5</Name> -->
+<!-- 			<Fuser Type="BestQualityFuser"> -->
+<!-- 				<Parameters> -->
+<!-- 					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames> -->
+<!-- 					<GravityAssistance></GravityAssistance> -->
+<!-- 					<AlphaTranslation>0.8</AlphaTranslation> -->
+<!-- 					<GammaTranslation>0.8</GammaTranslation> -->
+<!-- 					<AlphaRotation>0.5</AlphaRotation> -->
+<!-- 					<GammaRotation>0.5</GammaRotation> -->
+<!-- 					<ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor> -->
+<!-- 				</Parameters> -->
+<!-- 			</Fuser> -->
+
+<!-- 			<SensorSource> -->
+<!-- 				<SensorID>FeatureTracking1</SensorID> -->
+<!-- 				<SensorCosID>observatory</SensorCosID> -->
+<!-- 				<HandEyeCalibration> -->
+<!-- 					<TranslationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>1</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 					</TranslationOffset> -->
+<!-- 					<RotationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 						<W>1</W> -->
+<!-- 					</RotationOffset> -->
+<!-- 				</HandEyeCalibration> -->
+<!-- 				<COSOffset> -->
+<!-- 					<TranslationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>1</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 					</TranslationOffset> -->
+<!-- 					<RotationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 						<W>1</W> -->
+<!-- 					</RotationOffset> -->
+<!-- 				</COSOffset> -->
+<!-- 			</SensorSource> -->
+<!-- 		</COS> -->
+		
+<!-- 		<COS> -->
+<!-- 			<Name>MarkerlessCOS6</Name> -->
+<!-- 			<Fuser Type="BestQualityFuser"> -->
+<!-- 				<Parameters> -->
+<!-- 					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames> -->
+<!-- 					<GravityAssistance></GravityAssistance> -->
+<!-- 					<AlphaTranslation>0.8</AlphaTranslation> -->
+<!-- 					<GammaTranslation>0.8</GammaTranslation> -->
+<!-- 					<AlphaRotation>0.5</AlphaRotation> -->
+<!-- 					<GammaRotation>0.5</GammaRotation> -->
+<!-- 					<ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor> -->
+<!-- 				</Parameters> -->
+<!-- 			</Fuser> -->
+
+<!-- 			<SensorSource> -->
+<!-- 				<SensorID>FeatureTracking1</SensorID> -->
+<!-- 				<SensorCosID>firealarm</SensorCosID> -->
+<!-- 				<HandEyeCalibration> -->
+<!-- 					<TranslationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 					</TranslationOffset> -->
+<!-- 					<RotationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 						<W>1</W> -->
+<!-- 					</RotationOffset> -->
+<!-- 				</HandEyeCalibration> -->
+<!-- 				<COSOffset> -->
+<!-- 					<TranslationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 					</TranslationOffset> -->
+<!-- 					<RotationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 						<W>1</W> -->
+<!-- 					</RotationOffset> -->
+<!-- 				</COSOffset> -->
+<!-- 			</SensorSource> -->
+<!-- 		</COS> -->
+		
+<!-- 		<COS> -->
+<!-- 			<Name>MarkerlessCOS7</Name> -->
+<!-- 			<Fuser Type="BestQualityFuser"> -->
+<!-- 				<Parameters> -->
+<!-- 					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames> -->
+<!-- 					<GravityAssistance></GravityAssistance> -->
+<!-- 					<AlphaTranslation>0.8</AlphaTranslation> -->
+<!-- 					<GammaTranslation>0.8</GammaTranslation> -->
+<!-- 					<AlphaRotation>0.5</AlphaRotation> -->
+<!-- 					<GammaRotation>0.5</GammaRotation> -->
+<!-- 					<ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor> -->
+<!-- 				</Parameters> -->
+<!-- 			</Fuser> -->
+
+<!-- 			<SensorSource> -->
+<!-- 				<SensorID>FeatureTracking1</SensorID> -->
+<!-- 				<SensorCosID>foosball</SensorCosID> -->
+<!-- 				<HandEyeCalibration> -->
+<!-- 					<TranslationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 					</TranslationOffset> -->
+<!-- 					<RotationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 						<W>1</W> -->
+<!-- 					</RotationOffset> -->
+<!-- 				</HandEyeCalibration> -->
+<!-- 				<COSOffset> -->
+<!-- 					<TranslationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 					</TranslationOffset> -->
+<!-- 					<RotationOffset> -->
+<!-- 						<X>0</X> -->
+<!-- 						<Y>0</Y> -->
+<!-- 						<Z>0</Z> -->
+<!-- 						<W>1</W> -->
+<!-- 					</RotationOffset> -->
+<!-- 				</COSOffset> -->
+<!-- 			</SensorSource> -->
+<!-- 		</COS> -->
 	</Connections>
 </TrackingData>
