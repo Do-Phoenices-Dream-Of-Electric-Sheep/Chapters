@@ -99,6 +99,14 @@ public class GameplayActivity extends ARViewActivity {
 	        }
 	    }
 	
+	   //beginning to tie instant tracking to a new object instead of all objects every time.
+		public void onInstantObjectDetected(View v)
+		{
+			//mTiger.setVisible(false);
+			metaioSDK.startInstantTracking("INSTANT_3D");
+		}
+			   
+	   
 	@Override
 	protected void onGeometryTouched(IGeometry geometry)
 	{
