@@ -97,7 +97,7 @@
 			<SensorCOS>
 			
 				<!--	An ID that this COS is associated with. -->
-				<SensorCosID>Patch1</SensorCosID>
+				<SensorCosID>campus</SensorCosID>
 				
 				<!--	Parameters that should be applied to this "SensorCOS". 
 						-->
@@ -115,7 +115,7 @@
 							These parameters are not required and are intended 
 							for expert use only. -->
 					<ReferenceImage>campus.jpg</ReferenceImage>
-					<!-- <ReferenceImage WidthMM="283" HeightMM="200">campus.jpg</ReferenceImage> -->
+					<!-- <ReferenceImage>campus.jpg</ReferenceImage> -->
 
 					<!--	Another similarity threshold can be specified here. 
 							It will override the default similarity threshold 
@@ -126,19 +126,199 @@
 
 				</Parameters>
 			</SensorCOS>
-
-			<!--	The commented lines below show how another COS can be 
-					added to the configuration. -->
-			<!--
 			<SensorCOS>
-				<SensorCosID>Patch2</SensorCosID>
+			
+				<!--	An ID that this COS is associated with. -->
+				<SensorCosID>fundamentals</SensorCosID>
+				
+				<!--	Parameters that should be applied to this "SensorCOS". 
+						-->
 				<Parameters>
-					<ReferenceImage>junaioman.png</ReferenceImage>
-					<SimilarityThreshold>0.8</SimilarityThreshold>
+
+					<!--	Reference image file name. If available, width and 
+							height of the tracking template in millimeters can
+							be specified by adding attributes "WidthMM" and/or 
+							"HeightMM". If these values are not specified at 
+							all, the width and height of the reference image in 
+							pixels will be used. If only width or heigth are 
+							specified, the missing quantity will be calculated 
+							such that sizes agree with the aspect ratio of the 
+							image. 
+							These parameters are not required and are intended 
+							for expert use only. -->
+					<ReferenceImage>fundamentals.jpg</ReferenceImage>
+					<!-- <ReferenceImage>campus.jpg</ReferenceImage> -->
+
+					<!--	Another similarity threshold can be specified here. 
+							It will override the default similarity threshold 
+							specified for the sensor. 
+							This parameter is for expert usage only. In general 
+							it is advised to leave the value unchanged. -->
+					<SimilarityThreshold>0.7</SimilarityThreshold>
+
 				</Parameters>
 			</SensorCOS>
-			-->
+					<SensorCOS>
+			
+				<!--	An ID that this COS is associated with. -->
+				<SensorCosID>guy</SensorCosID>
+				
+				<!--	Parameters that should be applied to this "SensorCOS". 
+						-->
+				<Parameters>
 
+					<!--	Reference image file name. If available, width and 
+							height of the tracking template in millimeters can
+							be specified by adding attributes "WidthMM" and/or 
+							"HeightMM". If these values are not specified at 
+							all, the width and height of the reference image in 
+							pixels will be used. If only width or heigth are 
+							specified, the missing quantity will be calculated 
+							such that sizes agree with the aspect ratio of the 
+							image. 
+							These parameters are not required and are intended 
+							for expert use only. -->
+					<ReferenceImage>guy.jpg</ReferenceImage>
+					<!-- <ReferenceImage>guy.jpg</ReferenceImage> -->
+
+					<!--	Another similarity threshold can be specified here. 
+							It will override the default similarity threshold 
+							specified for the sensor. 
+							This parameter is for expert usage only. In general 
+							it is advised to leave the value unchanged. -->
+					<SimilarityThreshold>0.7</SimilarityThreshold>
+
+				</Parameters>
+			</SensorCOS>
+			<SensorCOS>
+			
+				<!--	An ID that this COS is associated with. -->
+				<SensorCosID>efforts</SensorCosID>
+				
+				<!--	Parameters that should be applied to this "SensorCOS". 
+						-->
+				<Parameters>
+
+					<!--	Reference image file name. If available, width and 
+							height of the tracking template in millimeters can
+							be specified by adding attributes "WidthMM" and/or 
+							"HeightMM". If these values are not specified at 
+							all, the width and height of the reference image in 
+							pixels will be used. If only width or heigth are 
+							specified, the missing quantity will be calculated 
+							such that sizes agree with the aspect ratio of the 
+							image. 
+							These parameters are not required and are intended 
+							for expert use only. -->
+					<ReferenceImage>efforts.jpg</ReferenceImage>
+					<!-- <ReferenceImage>campus.jpg</ReferenceImage> -->
+
+					<!--	Another similarity threshold can be specified here. 
+							It will override the default similarity threshold 
+							specified for the sensor. 
+							This parameter is for expert usage only. In general 
+							it is advised to leave the value unchanged. -->
+					<SimilarityThreshold>0.7</SimilarityThreshold>
+
+				</Parameters>
+			</SensorCOS>
+		<SensorCOS>
+			
+				<!--	An ID that this COS is associated with. -->
+				<SensorCosID>observatory</SensorCosID>
+				
+				<!--	Parameters that should be applied to this "SensorCOS". 
+						-->
+				<Parameters>
+
+					<!--	Reference image file name. If available, width and 
+							height of the tracking template in millimeters can
+							be specified by adding attributes "WidthMM" and/or 
+							"HeightMM". If these values are not specified at 
+							all, the width and height of the reference image in 
+							pixels will be used. If only width or heigth are 
+							specified, the missing quantity will be calculated 
+							such that sizes agree with the aspect ratio of the 
+							image. 
+							These parameters are not required and are intended 
+							for expert use only. -->
+					<ReferenceImage>observatory.jpg</ReferenceImage>
+					<!-- <ReferenceImage>campus.jpg</ReferenceImage> -->
+
+					<!--	Another similarity threshold can be specified here. 
+							It will override the default similarity threshold 
+							specified for the sensor. 
+							This parameter is for expert usage only. In general 
+							it is advised to leave the value unchanged. -->
+					<SimilarityThreshold>0.7</SimilarityThreshold>
+
+				</Parameters>
+			</SensorCOS>
+			
+				<SensorCOS>
+			
+				<!--	An ID that this COS is associated with. -->
+				<SensorCosID>firealarm</SensorCosID>
+				
+				<!--	Parameters that should be applied to this "SensorCOS". 
+						-->
+				<Parameters>
+
+					<!--	Reference image file name. If available, width and 
+							height of the tracking template in millimeters can
+							be specified by adding attributes "WidthMM" and/or 
+							"HeightMM". If these values are not specified at 
+							all, the width and height of the reference image in 
+							pixels will be used. If only width or heigth are 
+							specified, the missing quantity will be calculated 
+							such that sizes agree with the aspect ratio of the 
+							image. 
+							These parameters are not required and are intended 
+							for expert use only. -->
+					<ReferenceImage>firealarm.jpg</ReferenceImage>
+					<!-- <ReferenceImage>campus.jpg</ReferenceImage> -->
+
+					<!--	Another similarity threshold can be specified here. 
+							It will override the default similarity threshold 
+							specified for the sensor. 
+							This parameter is for expert usage only. In general 
+							it is advised to leave the value unchanged. -->
+					<SimilarityThreshold>0.7</SimilarityThreshold>
+
+				</Parameters>
+			</SensorCOS>
+					<SensorCOS>
+			
+				<!--	An ID that this COS is associated with. -->
+				<SensorCosID>foosball</SensorCosID>
+				
+				<!--	Parameters that should be applied to this "SensorCOS". 
+						-->
+				<Parameters>
+
+					<!--	Reference image file name. If available, width and 
+							height of the tracking template in millimeters can
+							be specified by adding attributes "WidthMM" and/or 
+							"HeightMM". If these values are not specified at 
+							all, the width and height of the reference image in 
+							pixels will be used. If only width or heigth are 
+							specified, the missing quantity will be calculated 
+							such that sizes agree with the aspect ratio of the 
+							image. 
+							These parameters are not required and are intended 
+							for expert use only. -->
+					<ReferenceImage>foosball.jpg</ReferenceImage>
+					<!-- <ReferenceImage>campus.jpg</ReferenceImage> -->
+
+					<!--	Another similarity threshold can be specified here. 
+							It will override the default similarity threshold 
+							specified for the sensor. 
+							This parameter is for expert usage only. In general 
+							it is advised to leave the value unchanged. -->
+					<SimilarityThreshold>0.7</SimilarityThreshold>
+
+				</Parameters>
+			</SensorCOS>
 		</Sensor>
 	</Sensors>
 
@@ -238,7 +418,7 @@
 						that these IDs are the same that we have used in the 
 						Sensor definition above. -->
 				<SensorID>FeatureTracking1</SensorID>
-				<SensorCosID>Patch1</SensorCosID>
+				<SensorCosID>campus</SensorCosID>
 
 				<!--	A hand-eye calibration allows to specify the relative 
 						pose between two sensors. In the simple case of having 
@@ -293,7 +473,7 @@
 				track multiple objects in parallel, it will always only track 
 				one of the defined objects at the same time. 
 				-->
-		<!--
+	
 		<COS>
 			<Name>MarkerlessCOS2</Name>
 			<Fuser Type="BestQualityFuser">
@@ -310,7 +490,7 @@
 
 			<SensorSource>
 				<SensorID>FeatureTracking1</SensorID>
-				<SensorCosID>Patch2</SensorCosID>
+				<SensorCosID>fundamentals</SensorCosID>
 				<HandEyeCalibration>
 					<TranslationOffset>
 						<X>0</X>
@@ -339,7 +519,235 @@
 				</COSOffset>
 			</SensorSource>
 		</COS>
-		-->
+		
+		<COS>
+			<Name>MarkerlessCOS3</Name>
+			<Fuser Type="BestQualityFuser">
+				<Parameters>
+					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames>
+					<GravityAssistance></GravityAssistance>
+					<AlphaTranslation>0.8</AlphaTranslation>
+					<GammaTranslation>0.8</GammaTranslation>
+					<AlphaRotation>0.5</AlphaRotation>
+					<GammaRotation>0.5</GammaRotation>
+					<ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor>
+				</Parameters>
+			</Fuser>
 
+			<SensorSource>
+				<SensorID>FeatureTracking1</SensorID>
+				<SensorCosID>guy</SensorCosID>
+				<HandEyeCalibration>
+					<TranslationOffset>
+						<X>2</X>
+						<Y>2</Y>
+						<Z>0</Z>
+					</TranslationOffset>
+					<RotationOffset>
+						<X>2</X>
+						<Y>2</Y>
+						<Z>0</Z>
+						<W>1</W>
+					</RotationOffset>
+				</HandEyeCalibration>
+				<COSOffset>
+					<TranslationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</TranslationOffset>
+					<RotationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<W>1</W>
+					</RotationOffset>
+				</COSOffset>
+			</SensorSource>
+		</COS>
+
+		<COS>
+			<Name>MarkerlessCOS4</Name>
+			<Fuser Type="BestQualityFuser">
+				<Parameters>
+					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames>
+					<GravityAssistance></GravityAssistance>
+					<AlphaTranslation>0.8</AlphaTranslation>
+					<GammaTranslation>0.8</GammaTranslation>
+					<AlphaRotation>0.5</AlphaRotation>
+					<GammaRotation>0.5</GammaRotation>
+					<ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor>
+				</Parameters>
+			</Fuser>
+
+			<SensorSource>
+				<SensorID>FeatureTracking1</SensorID>
+				<SensorCosID>efforts</SensorCosID>
+				<HandEyeCalibration>
+					<TranslationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</TranslationOffset>
+					<RotationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<W>1</W>
+					</RotationOffset>
+				</HandEyeCalibration>
+				<COSOffset>
+					<TranslationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</TranslationOffset>
+					<RotationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<W>1</W>
+					</RotationOffset>
+				</COSOffset>
+			</SensorSource>
+		</COS>
+		
+		<COS>
+			<Name>MarkerlessCOS5</Name>
+			<Fuser Type="BestQualityFuser">
+				<Parameters>
+					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames>
+					<GravityAssistance></GravityAssistance>
+					<AlphaTranslation>0.8</AlphaTranslation>
+					<GammaTranslation>0.8</GammaTranslation>
+					<AlphaRotation>0.5</AlphaRotation>
+					<GammaRotation>0.5</GammaRotation>
+					<ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor>
+				</Parameters>
+			</Fuser>
+
+			<SensorSource>
+				<SensorID>FeatureTracking1</SensorID>
+				<SensorCosID>observatory</SensorCosID>
+				<HandEyeCalibration>
+					<TranslationOffset>
+						<X>0</X>
+						<Y>1</Y>
+						<Z>0</Z>
+					</TranslationOffset>
+					<RotationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<W>1</W>
+					</RotationOffset>
+				</HandEyeCalibration>
+				<COSOffset>
+					<TranslationOffset>
+						<X>0</X>
+						<Y>1</Y>
+						<Z>0</Z>
+					</TranslationOffset>
+					<RotationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<W>1</W>
+					</RotationOffset>
+				</COSOffset>
+			</SensorSource>
+		</COS>
+		
+		<COS>
+			<Name>MarkerlessCOS6</Name>
+			<Fuser Type="BestQualityFuser">
+				<Parameters>
+					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames>
+					<GravityAssistance></GravityAssistance>
+					<AlphaTranslation>0.8</AlphaTranslation>
+					<GammaTranslation>0.8</GammaTranslation>
+					<AlphaRotation>0.5</AlphaRotation>
+					<GammaRotation>0.5</GammaRotation>
+					<ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor>
+				</Parameters>
+			</Fuser>
+
+			<SensorSource>
+				<SensorID>FeatureTracking1</SensorID>
+				<SensorCosID>firealarm</SensorCosID>
+				<HandEyeCalibration>
+					<TranslationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</TranslationOffset>
+					<RotationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<W>1</W>
+					</RotationOffset>
+				</HandEyeCalibration>
+				<COSOffset>
+					<TranslationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</TranslationOffset>
+					<RotationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<W>1</W>
+					</RotationOffset>
+				</COSOffset>
+			</SensorSource>
+		</COS>
+		
+		<COS>
+			<Name>MarkerlessCOS7</Name>
+			<Fuser Type="BestQualityFuser">
+				<Parameters>
+					<KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames>
+					<GravityAssistance></GravityAssistance>
+					<AlphaTranslation>0.8</AlphaTranslation>
+					<GammaTranslation>0.8</GammaTranslation>
+					<AlphaRotation>0.5</AlphaRotation>
+					<GammaRotation>0.5</GammaRotation>
+					<ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor>
+				</Parameters>
+			</Fuser>
+
+			<SensorSource>
+				<SensorID>FeatureTracking1</SensorID>
+				<SensorCosID>foosball</SensorCosID>
+				<HandEyeCalibration>
+					<TranslationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</TranslationOffset>
+					<RotationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<W>1</W>
+					</RotationOffset>
+				</HandEyeCalibration>
+				<COSOffset>
+					<TranslationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</TranslationOffset>
+					<RotationOffset>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+						<W>1</W>
+					</RotationOffset>
+				</COSOffset>
+			</SensorSource>
+		</COS>
 	</Connections>
 </TrackingData>

@@ -17,7 +17,7 @@ import com.metaio.sdk.jni.Vector3d;
 import com.metaio.tools.io.AssetsManager;
 
 public class GameplayActivity extends ARViewActivity {
-	
+
 	private IGeometry mcampus;
 	private IGeometry mefforts;
 	private IGeometry mfirealarm;
@@ -29,9 +29,9 @@ public class GameplayActivity extends ARViewActivity {
 	private TextView storytext;	
 	protected int getGUILayout() {
 		return R.layout.activity_gameplay;
-		
+
 	}
-	
+
 	public void onButtonClick(View v)
 	{
 		finish();
@@ -44,20 +44,14 @@ public class GameplayActivity extends ARViewActivity {
 		{
 			//getCoordinateSystemID
 			//http://helpdesk.metaio.com/questions/15089/how-to-find-out-which-coordinate-system-is-currently-tracked
-			TrackingValuesVector poses = metaioSDK.getTrackingValues();
-			if (poses.size() != 0) {
-	            mcampus.setCoordinateSystemID(poses.get(1).getCoordinateSystemID());
-
-			}
-			
-			
+	
 			// Getting a file path for tracking configuration XML file
 			String trackingConfigFile = AssetsManager.getAssetPath(getApplicationContext(), "Chapters/assets/TrackingData_MarkerlessFast.xml");
-			
+
 			// Assigning tracking configuration
 			boolean result = metaioSDK.setTrackingConfiguration(trackingConfigFile); 
 			MetaioDebug.log("Tracking data loaded: " + result); 
-	        
+
 			// Getting a file path for a movie
 			final String pcampus = AssetsManager.getAssetPath(getApplicationContext(), "Chapters/assets/campus.3g2");		
 			//storytext.setVisibility(TextView.GONE);
@@ -74,7 +68,7 @@ public class GameplayActivity extends ARViewActivity {
 					//storytext.setVisibility(TextView.VISIBILE);
 					storytext = (TextView) this.findViewById(R.id.textView1);
 					storytext.setText("testing testing");
-					
+
 				}
 				else
 					MetaioDebug.log(Log.ERROR, "Error loading geometry: "+mcampus);
@@ -85,7 +79,7 @@ public class GameplayActivity extends ARViewActivity {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Override
 	protected void onGeometryTouched(IGeometry geometry)
 	{
@@ -99,13 +93,12 @@ public class GameplayActivity extends ARViewActivity {
 		// No callbacks needed in this tutorial
 		return null;
 	}	
-	
-	
-	
+
+
+
 }
-	
-	
-	
+
+
 
 
 
