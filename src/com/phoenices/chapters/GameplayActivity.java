@@ -3,11 +3,15 @@ package com.phoenices.chapters;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.metaio.sdk.ARViewActivity;
 import com.metaio.sdk.MetaioDebug;
+import com.metaio.sdk.jni.ETRACKING_STATE;
 import com.metaio.sdk.jni.IGeometry;
 import com.metaio.sdk.jni.IMetaioSDKCallback;
+import com.metaio.sdk.jni.MetaioSDK;
+import com.metaio.sdk.jni.TrackingValues;
 import com.metaio.sdk.jni.Vector3d;
 import com.metaio.tools.io.AssetsManager;
 
@@ -38,10 +42,10 @@ public class GameplayActivity extends ARViewActivity {
 	   @Override
 	    protected void loadContents() 
 	    {  
-	        try {
-	            
+		   try {  
+	       		//Load asset folder	            
 	            AssetsManager.extractAllAssets(this, true);
-	            
+	          
 	            // Getting a file path for tracking configuration XML file
 	            String trackingConfigFile = AssetsManager.getAssetPath(getApplicationContext(), "TrackingData_MarkerlessFast.xml");
 	            
@@ -49,22 +53,53 @@ public class GameplayActivity extends ARViewActivity {
 	            boolean result = metaioSDK.setTrackingConfiguration(trackingConfigFile); 
 	            MetaioDebug.log("Tracking data loaded: " + result); 
 	            
-	            // Getting a file path for a 3D geometry
-	            String metaioManModel = AssetsManager.getAssetPath(getApplicationContext(), "metaioman.md2");         
-	            if (metaioManModel != null) {
-	                // Loading 3D geometry
-	                mModel = metaioSDK.createGeometry(metaioManModel);
+	            // Getting a file path for all geometries
+	            //Basically, the last argument is the file that we want to show when the object is tracked
+	            String metaioManModel = AssetsManager.getAssetPath(getApplicationContext(), "metaioman.md2");   
+	            String campusmovie = AssetsManager.getAssetPath(getApplicationContext(), "campus.3g2");
+	            String guy = AssetsManager.getAssetPath(getApplicationContext(), "guy.jpg");
+	            //load all geometries 
+	            //actually loading the geometry from above
+	            //these constructors are different depending on the asset type. you'll only need these three
+	            mcampus = metaioSDK.createGeometryFromMovie(campusmovie, true);
+	            mModel = metaioSDK.createGeometry(metaioManModel);
+	            mguy = metaioSDK.createGeometryFromImage(guy);
+	            //ignore
+	            TrackingValues bob = metaioSDK.getTrackingValues(1);
+	            
+	            //set coordinate ids
+	            //This corresponds to the number in the tracking data xml 
+	            //1 = the first item, which is campus
+	            //Just set the models with the trackers. 
+	            mModel.setCoordinateSystemID(1);
+	            mcampus.setCoordinateSystemID(2);
+	            mguy.setCoordinateSystemID(3);
 	                if (mModel != null) {
 	                    // Set geometry properties
 	                    mModel.setScale(new Vector3d(4.0f, 4.0f, 4.0f));
-	                } else {
+	                   
+	                    }
+	                 else {
 	                      MetaioDebug.log(Log.ERROR, "Error loading geometry: "+metaioManModel);   
 	                }
+	               
+	           // Ignore this. I'm trying to figure out how to check when we're tracking.
+	            if(bob.isTrackingState()) {
+	            	Log.i("Fuck", "Yes");
+	            	 mModel.setCoordinateSystemID(2);
+	            	 storytext = (TextView) this.findViewById(R.id.textView1);
+	                    storytext.setText("testing testing");
+	                    Log.i("Fuck", "" + mModel.getCoordinateSystemID());
 	            }
-	            
+	       }
+	       catch(Exception e) {
+	    	   e.printStackTrace();
+	       }
+                   
+	    
 	            
 	         // Getting a file path for a movie
-	            final String pcampus = AssetsManager.getAssetPath(getApplicationContext(), "Chapters/assets/campus.3g2");       
+	         /*   final String pcampus = AssetsManager.getAssetPath(getApplicationContext(), "Chapters/assets/campus.3g2");       
 	            //storytext.setVisibility(TextView.GONE);
 	            if (pcampus != null) 
 	            {
@@ -84,11 +119,9 @@ public class GameplayActivity extends ARViewActivity {
 	                else
 	                    MetaioDebug.log(Log.ERROR, "Error loading geometry: "+mcampus);
 	            }
-	            
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	        }
-	    }
+	            */
+	        } 
+	    
 	
 	   //beginning to tie instant tracking to a new object instead of all objects every time.
 		public void onInstantObjectDetected(View v)
