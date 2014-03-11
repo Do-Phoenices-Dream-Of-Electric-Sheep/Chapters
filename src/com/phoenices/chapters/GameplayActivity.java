@@ -1,5 +1,11 @@
 package com.phoenices.chapters;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -19,14 +25,18 @@ public class GameplayActivity extends ARViewActivity {
 
 	private IGeometry mcampus;
 	private IGeometry mefforts;
-	private IGeometry mfirealarm;
-	private IGeometry mfoosball;
+	//private IGeometry mfirealarm;
+	//private IGeometry mfoosball;
 	private IGeometry mfundamentals;
 	private IGeometry mguy;
-	private IGeometry mhinkley;
+	//private IGeometry mhinkley;
 	private IGeometry mobservatory;
 	private IGeometry mModel;
 	private TextView storytext;	
+	
+	
+	
+	
 	@Override
     protected int getGUILayout() {
 		return R.layout.activity_gameplay;
@@ -57,15 +67,23 @@ public class GameplayActivity extends ARViewActivity {
 	            //Basically, the last argument is the file that we want to show when the object is tracked
 	            String metaioManModel = AssetsManager.getAssetPath(getApplicationContext(), "metaioman.md2");   
 	            String campusmovie = AssetsManager.getAssetPath(getApplicationContext(), "campus.3g2");
-	            String guy = AssetsManager.getAssetPath(getApplicationContext(), "guy.jpg");
+	            String guy = AssetsManager.getAssetPath(getApplicationContext(), "speechbubble.png");
+	            //String firealarm = AssetsManager.getAssetPath(getApplicationContext(), "firealarm.mp3");
+	            String observatory = AssetsManager.getAssetPath(getApplicationContext(), "thing.gif");
+	            String efforts = AssetsManager.getAssetPath(getApplicationContext(), "discouragement.jpg");
+	            String fundamentals = AssetsManager.getAssetPath(getApplicationContext(), "img.png");
 	            //load all geometries 
 	            //actually loading the geometry from above
 	            //these constructors are different depending on the asset type. you'll only need these three
 	            mcampus = metaioSDK.createGeometryFromMovie(campusmovie, true);
 	            mModel = metaioSDK.createGeometry(metaioManModel);
 	            mguy = metaioSDK.createGeometryFromImage(guy);
+	            //mfirealarm = metaioSDK.createGeometryFromImage(guy);
+	            mobservatory = metaioSDK.createGeometryFromImage(efforts);
+	            mefforts = metaioSDK.createGeometryFromImage(efforts);
+	            mfundamentals = metaioSDK.createGeometryFromImage(fundamentals);
 	            //ignore
-	            TrackingValues bob = metaioSDK.getTrackingValues(1);
+	            //TrackingValues falarm = metaioSDK.getTrackingValues(6);
 	            
 	            //set coordinate ids
 	            //This corresponds to the number in the tracking data xml 
@@ -73,7 +91,10 @@ public class GameplayActivity extends ARViewActivity {
 	            //Just set the models with the trackers. 
 	            mModel.setCoordinateSystemID(1);
 	            mcampus.setCoordinateSystemID(2);
-	            mguy.setCoordinateSystemID(3);
+	            mfundamentals.setCoordinateSystemID(3);
+	            mguy.setCoordinateSystemID(4);
+	            mefforts.setCoordinateSystemID(5);
+	            mobservatory.setCoordinateSystemID(6);
 	                if (mModel != null) {
 	                    // Set geometry properties
 	                    mModel.setScale(new Vector3d(4.0f, 4.0f, 4.0f));
@@ -84,13 +105,9 @@ public class GameplayActivity extends ARViewActivity {
 	                }
 	               
 	           // Ignore this. I'm trying to figure out how to check when we're tracking.
-	            if(bob.isTrackingState()) {
-	            	Log.i("Fuck", "Yes");
-	            	 mModel.setCoordinateSystemID(2);
-	            	 storytext = (TextView) this.findViewById(R.id.textView1);
-	                    storytext.setText("testing testing");
-	                    Log.i("Fuck", "" + mModel.getCoordinateSystemID());
-	            }
+	           // if(falarm.isTrackingState()) {
+	            	//playSound();
+	        //    }
 	       }
 	       catch(Exception e) {
 	    	   e.printStackTrace();
