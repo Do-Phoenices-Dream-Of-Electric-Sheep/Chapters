@@ -63,6 +63,8 @@ public class GameplayActivity extends ARViewActivity {
 	            boolean result = metaioSDK.setTrackingConfiguration(trackingConfigFile); 
 	            MetaioDebug.log("Tracking data loaded: " + result); 
 	            
+
+
 	            // Getting a file path for all geometries
 	            //Basically, the last argument is the file that we want to show when the object is tracked
 	            String metaioManModel = AssetsManager.getAssetPath(getApplicationContext(), "metaioman.md2");   
@@ -90,6 +92,8 @@ public class GameplayActivity extends ARViewActivity {
 	            //1 = the first item, which is campus
 	            //Just set the models with the trackers. 
 	            //mModel.setCoordinateSystemID(1);
+
+	            
 	            mcampus.setCoordinateSystemID(1);
 	            mfundamentals.setCoordinateSystemID(2);
 	            mguy.setCoordinateSystemID(3);
