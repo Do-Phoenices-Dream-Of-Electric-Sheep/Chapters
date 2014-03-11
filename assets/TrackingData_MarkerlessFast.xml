@@ -211,7 +211,7 @@
 							image. 
 							These parameters are not required and are intended 
 							for expert use only. -->
-					<ReferenceImage>efforts1.jpg</ReferenceImage>
+					<ReferenceImage>efforts1.png</ReferenceImage>
 					<!-- <ReferenceImage>campus.jpg</ReferenceImage> -->
 
 					<!--	Another similarity threshold can be specified here. 
