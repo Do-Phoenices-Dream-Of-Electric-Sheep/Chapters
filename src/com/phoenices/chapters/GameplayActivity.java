@@ -89,12 +89,12 @@ public class GameplayActivity extends ARViewActivity {
 	            //This corresponds to the number in the tracking data xml 
 	            //1 = the first item, which is campus
 	            //Just set the models with the trackers. 
-	            mModel.setCoordinateSystemID(1);
-	            mcampus.setCoordinateSystemID(2);
-	            mfundamentals.setCoordinateSystemID(3);
-	            mguy.setCoordinateSystemID(4);
-	            mefforts.setCoordinateSystemID(5);
-	            mobservatory.setCoordinateSystemID(6);
+	            //mModel.setCoordinateSystemID(1);
+	            mcampus.setCoordinateSystemID(1);
+	            mfundamentals.setCoordinateSystemID(2);
+	            mguy.setCoordinateSystemID(3);
+	            mefforts.setCoordinateSystemID(4);
+	            mobservatory.setCoordinateSystemID(5);
 	                if (mModel != null) {
 	                    // Set geometry properties
 	                    mModel.setScale(new Vector3d(4.0f, 4.0f, 4.0f));

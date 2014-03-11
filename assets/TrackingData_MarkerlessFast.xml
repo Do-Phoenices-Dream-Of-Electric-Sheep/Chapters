@@ -94,38 +94,7 @@
 			<!--	Define a "SensorCOS" for this sensor. This is essentially a 
 					coordinate system associated with a template image that is 
 					to be tracked. -->
-			<SensorCOS>
 			
-				<!--	An ID that this COS is associated with. -->
-				<SensorCosID>metaioman</SensorCosID>
-				
-				<!--	Parameters that should be applied to this "SensorCOS". 
-						-->
-				<Parameters>
-
-					<!--	Reference image file name. If available, width and 
-							height of the tracking template in millimeters can
-							be specified by adding attributes "WidthMM" and/or 
-							"HeightMM". If these values are not specified at 
-							all, the width and height of the reference image in 
-							pixels will be used. If only width or heigth are 
-							specified, the missing quantity will be calculated 
-							such that sizes agree with the aspect ratio of the 
-							image. 
-							These parameters are not required and are intended 
-							for expert use only. -->
-					<ReferenceImage>metaioman_target.png</ReferenceImage>
-					<!-- <ReferenceImage WidthMM="" HeightMM="">campus.jpg</ReferenceImage> -->
-
-					<!--	Another similarity threshold can be specified here. 
-							It will override the default similarity threshold 
-							specified for the sensor. 
-							This parameter is for expert usage only. In general 
-							it is advised to leave the value unchanged. -->
-					<SimilarityThreshold>0.4</SimilarityThreshold>
-
-				</Parameters>
-			</SensorCOS>
 			<SensorCOS>
 			
 				<!--	An ID that this COS is associated with. -->
@@ -210,7 +179,7 @@
 							image. 
 							These parameters are not required and are intended 
 							for expert use only. -->
-					<ReferenceImage>chien.jpg</ReferenceImage>
+					<ReferenceImage>einstein.jpg</ReferenceImage>
 					<!-- <ReferenceImage WidthMM="" HeightMM="">guy.jpg</ReferenceImage> -->
 
 					<!--	Another similarity threshold can be specified here. 
@@ -242,7 +211,7 @@
 							image. 
 							These parameters are not required and are intended 
 							for expert use only. -->
-					<ReferenceImage>efforts.jpg</ReferenceImage>
+					<ReferenceImage>efforts1.jpg</ReferenceImage>
 					<!-- <ReferenceImage>campus.jpg</ReferenceImage> -->
 
 					<!--	Another similarity threshold can be specified here. 
